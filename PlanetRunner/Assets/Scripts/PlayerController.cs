@@ -8,17 +8,21 @@ public class PlayerController : MonoBehaviour
     LayerMask groundLayer;
     [SerializeField]
     float Sensitivity=20f;
+    [SerializeField]
+    float JumpForce;
 
     Rigidbody componentRigidbody;
     private float sidewaysSpeed=0f;
     private Vector2 touchLastPos;
     private Camera mainCamera;
+    private SphereCollider coll;
 
 
     private void Start()
     {
         mainCamera = Camera.main;
         componentRigidbody = GetComponent<Rigidbody>();
+        coll = GetComponent<SphereCollider>();
     }
 
     private void Update()
@@ -47,13 +51,13 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(transform.up, Input.GetAxis("Horizontal") * 2, Space.World);
         transform.Rotate(transform.up, sidewaysSpeed, Space.World);
 
-        /*  Ray ray = new Ray(transform.position, -transform.up);
+          Ray ray = new Ray(transform.position, -transform.up);
           RaycastHit Hit;
 
-          if(Physics.Raycast(ray, out Hit,0.5f+0.01f,groundLayer))
+          if(Physics.Raycast(ray, out Hit,coll.radius/2+0.01f,groundLayer))
           {
-              componentRigidbody.AddForce(transform.up * 1000f);
-          }*/
+              componentRigidbody.AddForce(transform.up * JumpForce);
+          }
     }
 }
 

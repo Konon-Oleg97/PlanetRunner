@@ -10,7 +10,6 @@ ScriptsOnlyBuild:
     - PlayerController
     - PlayerControllerMenu
     - PlayerStats
-    - SmoothFollow
     - StatsUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
@@ -20,6 +19,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -64,8 +64,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9674}
     - Class: 114
       Script: {instanceID: 9744}
-    - Class: 114
-      Script: {instanceID: 9754}
     - Class: 114
       Script: {instanceID: 9762}
     - Class: 114
@@ -218,12 +216,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlanetConstraint
-  - hash:
-      serializedVersion: 2
-      Hash: 7cb90c49b02cd8dd67e2cb37ece4f5a2
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SmoothFollow
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -430,7 +422,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 3aab8fc7134a401bb5ff69db0cc455d2
+      Hash: 698f7031c8a8662f319b93216920596e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
